@@ -10,6 +10,8 @@ COPY ui.zip .
 
 RUN apt-get update && apt-get install unzip
 
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
+
 RUN unzip ui.zip && rm ui.zip
 
 RUN npm install
